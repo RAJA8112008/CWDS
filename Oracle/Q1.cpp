@@ -16,7 +16,6 @@ string Reverse_Word(string &s){
             word += s[i];
         }
     }
-
     // last word
     if(!word.empty()){
         words.push_back(word);
