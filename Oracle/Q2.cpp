@@ -15,14 +15,16 @@ class Node{
     }
 };
 //using recursion
-bool isBST(Node* root,int maxval,int minVal){
-   if(root==NULL)return true;
-   //False Conditions
-   if(root->data>=maxval || root->data<=minVal)return false;
-   return isBST(root->left,minVal,root->data) && isBST(root->right,root->data,maxval);
-}
+bool isBST(Node* root, long long minVal, long long maxVal){
+        if(root == NULL) return true;
+
+        if(root->data <= minVal || root->data >= maxVal) return false;
+
+        return isBST(root->left, minVal, root->data) &&
+               isBST(root->right, root->data, maxVal);
+    }
 bool CheckBST(Node* root){
-    return isBST(root,INT_MAX,INT_MIN);
+   return isBST(root, LLONG_MIN, LLONG_MAX);
 }
 
 int main(){
