@@ -1,7 +1,6 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-
 vector<int>Sort012(vector<int>&arr,int size){
     int countZeros=0;
     int countones=0;
