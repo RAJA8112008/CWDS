@@ -12,7 +12,6 @@ int minJumps(vector<int>&arr){
             choice=maxi;
         }
         if(choice>=arr.size()-1)return jumps;
-
     }
     return -1;
 }
