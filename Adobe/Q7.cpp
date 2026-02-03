@@ -46,7 +46,8 @@ int main(){
     root->right=new Node(30);
    vector<int>res =SpiralTravels(root);
    for(auto x:res){
-    cout<<x<<endl;
+    cout<<x<<" ";
    }
+   cout<<endl;
 }
 
