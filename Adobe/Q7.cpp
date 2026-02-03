@@ -16,6 +16,7 @@ class Node{
 vector<int>SpiralTravels(Node* root){
    vector<int>ans;
    queue<Node*>q;
+   if(root==NULL)return ans;
    q.push(root);
    bool leftToright=true;
    while(!q.empty()){
