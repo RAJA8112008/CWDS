@@ -36,6 +36,4 @@ int main(){
     cout<<"Enter the Number for subArray sum"<<endl;
     cin>>x;
     cout<<"SubArray size is "<<(smallestSubWithSum(arr,x))<<endl;
-
-
 }
