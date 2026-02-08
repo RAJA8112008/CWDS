@@ -15,10 +15,10 @@ int single(vector<int>&arr){
 }
 int main(){
     int size;
-    cout<<"Enter the size of array "<<endl;
+    cout<<"Enter the size of array :"<<endl;
     cin>>size;
     vector<int>arr(size);
-    cout<<"Enter the values in the array "<<endl;
+    cout<<"Enter the values in the array :"<<endl;
     int val;
     for(int i=0;i<size;i++){ 
          cin>>val;
@@ -30,6 +30,6 @@ int main(){
         cout<<arr[i]<<" ";
     }cout<<endl;
 
-    cout<<"Single freq ele is "<<single(arr)<<endl;
+    cout<<"Single freq ele is : "<<single(arr)<<endl;
 
 }
