@@ -44,7 +44,6 @@ int main(){
         
     }
 
-    
         cout<<"Enter the values in arr1"<<endl;
     for(int i=0;i<n;i++){
         cin>>data;
