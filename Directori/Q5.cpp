@@ -3,7 +3,9 @@
 using namespace std;
 bool arraypairSum(int arr[],int n, int k)
 {
-    int sum = 0;
+//  <----Brute Force--->
+
+  /* int sum = 0;
     if (n % 2 != 0)
         return false;
     vector<int> visited(n, false);
@@ -25,7 +27,22 @@ bool arraypairSum(int arr[],int n, int k)
         if (!found)
             return false;
     }
-    return true;
+    return true;*/
+
+            /* <---Good Aproach--->*/
+         unordered_set<int>st;
+            for(int i=0;i<n;i++){
+                int r1=arr[i]%k;
+                int r2=k-r1;
+                if(st.find(r2)!=st.end()){
+                    st.erase(r2);
+                }else if(r1==0 && (st.find(0)!=st.end())){
+                    st.erase(0);
+                }else{
+                    st.insert(r1);
+                }
+            }
+            return st.size()==0;
 }
 int main()
 {
