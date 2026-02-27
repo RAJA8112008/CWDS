@@ -1,48 +1,54 @@
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
-bool arraypairSum(int arr[],int n, int k)
+bool arraypairSum(int arr[], int n, int k)
 {
-//  <----Brute Force--->
+    //  <----Brute Force--->
 
-  /* int sum = 0;
-    if (n % 2 != 0)
-        return false;
-    vector<int> visited(n, false);
+    /* int sum = 0;
+      if (n % 2 != 0)
+          return false;
+      vector<int> visited(n, false);
+      for (int i = 0; i < n; i++)
+      {
+          if (visited[i])
+              continue;
+          bool found = false;
+          for (int j = i + 1; j < n; j++)
+          {
+              sum = arr[i] + arr[j];
+              if (!visited[j] && sum % k == 0)
+              {
+                  visited[i] = true;
+                  visited[j] = true;
+                  found = true;
+              }
+          }
+          if (!found)
+              return false;
+      }
+      return true;*/
+
+    /* <---Good Aproach--->*/
+    unordered_set<int> st;
     for (int i = 0; i < n; i++)
     {
-        if (visited[i])
-            continue;
-        bool found = false;
-        for (int j = i + 1; j < n; j++)
+        int r1 = arr[i] % k;
+        int r2 = k - r1;
+        if (st.find(r2) != st.end())
         {
-            sum = arr[i] + arr[j];
-            if (!visited[j] && sum % k == 0)
-            {
-                visited[i] = true;
-                visited[j] = true;
-                found = true;
-            }
+            st.erase(r2);
         }
-        if (!found)
-            return false;
+        else if (r1 == 0 && (st.find(0) != st.end()))
+        {
+            st.erase(0);
+        }
+        else
+        {
+            st.insert(r1);
+        }
     }
-    return true;*/
-
-            /* <---Good Aproach--->*/
-         unordered_set<int>st;
-            for(int i=0;i<n;i++){
-                int r1=arr[i]%k;
-                int r2=k-r1;
-                if(st.find(r2)!=st.end()){
-                    st.erase(r2);
-                }else if(r1==0 && (st.find(0)!=st.end())){
-                    st.erase(0);
-                }else{
-                    st.insert(r1);
-                }
-            }
-            return st.size()==0;
+    return st.size() == 0;
 }
 int main()
 {
@@ -67,5 +73,5 @@ int main()
     }
     cout << endl;
     // Array Pair Sum Divisibility Problem
-    cout << (arraypairSum(arr,n,K) ? "Yes" : "No") << endl;
+    cout << (arraypairSum(arr, n, K) ? "Yes" : "No") << endl;
 }
