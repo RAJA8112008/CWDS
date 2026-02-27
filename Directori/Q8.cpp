@@ -8,6 +8,7 @@ class Node{
     int data;
     Node* next;
     //constructor
+    
     Node(int val){
         this->data=val;
         this->next=NULL;
