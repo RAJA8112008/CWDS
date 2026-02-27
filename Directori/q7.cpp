@@ -12,6 +12,7 @@ public:
     // constructor to initilize the node
     Node(int val)
     {
+        
         this->data = val;
         this->left = NULL;
         this->right = NULL;
